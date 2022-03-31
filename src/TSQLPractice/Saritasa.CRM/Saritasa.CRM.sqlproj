@@ -1,0 +1,3171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Saritasa.CRM</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{fc368c7b-ac17-4b8c-a4fc-2a20ba5ab436}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Saritasa.CRM</RootNamespace>
+    <AssemblyName>Saritasa.CRM</AssemblyName>
+    <ModelCollation>1049,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Cyrillic_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\Procs1\" />
+    <Folder Include="dbo\Stored Procedures\Procs2\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\aspnet_Roles.sql" />
+    <Build Include="dbo\Tables\ProjectRepositories.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\email_templates.sql" />
+    <Build Include="dbo\Tables\lookup_file_types.sql" />
+    <Build Include="dbo\Tables\NetProfileTypes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\aspnet_UsersInRoles.sql" />
+    <Build Include="dbo\Tables\UserNetProfiles.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\daily_reports.sql" />
+    <Build Include="dbo\Tables\lookup_calc_types.sql" />
+    <Build Include="dbo\Tables\lookup_workTypes.sql" />
+    <Build Include="dbo\Tables\document_calcs.sql" />
+    <Build Include="dbo\Tables\UserPerfomanceReview.sql" />
+    <Build Include="dbo\Tables\ProjectWorkAllocation.sql" />
+    <Build Include="dbo\Tables\project_reviews.sql" />
+    <Build Include="dbo\Tables\Blogs.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\lookup_calendar_events_type.sql" />
+    <Build Include="dbo\Tables\BlogRatings.sql" />
+    <Build Include="dbo\Tables\Reports.sql" />
+    <Build Include="dbo\Tables\AuthorizationData.sql" />
+    <Build Include="dbo\Tables\ProjectMilestones.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\lookup_document_statuses.sql" />
+    <Build Include="dbo\Tables\aspnet_Paths.sql" />
+    <Build Include="dbo\Tables\lookup_user_roles.sql" />
+    <Build Include="dbo\Tables\document_calcs_date.sql" />
+    <Build Include="dbo\Tables\AcceptedJobsUsers.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\project_managers.sql" />
+    <Build Include="dbo\Tables\ReopenedJobs.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\aspnet_PersonalizationAllUsers.sql" />
+    <Build Include="dbo\Tables\aspnet_PersonalizationPerUser.sql" />
+    <Build Include="dbo\Tables\user_roles.sql" />
+    <Build Include="dbo\Tables\lookup_document_types.sql" />
+    <Build Include="dbo\Tables\lookup_email_types.sql" />
+    <Build Include="dbo\Tables\ProjectResources.sql" />
+    <Build Include="dbo\Tables\lookup_rule_groups.sql" />
+    <Build Include="dbo\Tables\AuthorizationSources.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\lookup_rules.sql" />
+    <Build Include="dbo\Tables\IssuedTokens.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\role_permissions.sql" />
+    <Build Include="dbo\Tables\lookup_task_types.sql" />
+    <Build Include="dbo\Tables\Permissions.sql" />
+    <Build Include="dbo\Tables\lookup_phone_types.sql" />
+    <Build Include="dbo\Tables\lookup_note_types.sql" />
+    <Build Include="dbo\Tables\LookupBranch.sql" />
+    <Build Include="dbo\Tables\ProjectRequisites.sql" />
+    <Build Include="dbo\Tables\client_managers.sql" />
+    <Build Include="dbo\Tables\LookupCheckList.sql" />
+    <Build Include="dbo\Tables\Phones.sql" />
+    <Build Include="dbo\Tables\LookupAddressTypes.sql" />
+    <Build Include="dbo\Tables\Contacts.sql" />
+    <Build Include="dbo\Tables\ProjectCheckList.sql" />
+    <Build Include="dbo\Tables\Notifications.sql" />
+    <Build Include="dbo\Tables\aspnet_WebEvent_Events.sql" />
+    <Build Include="dbo\Tables\CalendarPersonalPeriods.sql" />
+    <Build Include="dbo\Tables\Tags.sql" />
+    <Build Include="dbo\Tables\tasks_tags.sql" />
+    <Build Include="dbo\Tables\Search.sql" />
+    <Build Include="dbo\Tables\ProjectHoursAllocations.sql" />
+    <Build Include="dbo\Tables\Addresses.sql" />
+    <Build Include="dbo\Tables\CalendarList_1.sql" />
+    <Build Include="dbo\Tables\UserStatistic.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\LogIP.sql" />
+    <Build Include="dbo\Tables\task_departments.sql" />
+    <Build Include="dbo\Tables\document_tracks.sql" />
+    <Build Include="dbo\Tables\AspNet_SqlCacheTablesForChangeNotification.sql" />
+    <Build Include="dbo\Tables\ProjectResourceAllocations.sql" />
+    <Build Include="dbo\Tables\Favorites.sql" />
+    <Build Include="dbo\Tables\project_sprints.sql" />
+    <Build Include="dbo\Tables\task_boomerangs.sql" />
+    <Build Include="dbo\Tables\Files.sql" />
+    <Build Include="dbo\Tables\project_features.sql" />
+    <Build Include="dbo\Tables\birthday_comments.sql" />
+    <Build Include="dbo\Tables\Emails.sql" />
+    <Build Include="dbo\Tables\UserNoteSettings.sql" />
+    <Build Include="dbo\Tables\birthday_comment_ratings.sql" />
+    <Build Include="dbo\Tables\Jobs.sql" />
+    <Build Include="dbo\Tables\ProjectChangeOrders.sql" />
+    <Build Include="dbo\Tables\ProjectFinancialMilestones.sql" />
+    <Build Include="dbo\Tables\jobs_distribute_history.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\EmploymentScores.sql" />
+    <Build Include="dbo\Tables\aspnet_Applications.sql" />
+    <Build Include="dbo\Tables\CalendarEvents.sql" />
+    <Build Include="dbo\Tables\JiraMapping.sql" />
+    <Build Include="dbo\Tables\aspnet_Users.sql" />
+    <Build Include="dbo\Tables\Clients.sql" />
+    <Build Include="dbo\Tables\Todos.sql" />
+    <Build Include="dbo\Tables\task_push.sql" />
+    <Build Include="dbo\Tables\lookup_project_requisite_types.sql" />
+    <Build Include="dbo\Tables\Events.sql" />
+    <Build Include="dbo\Tables\aspnet_SchemaVersions.sql" />
+    <Build Include="dbo\Tables\TodoSettings.sql" />
+    <Build Include="dbo\Tables\task_assigned.sql" />
+    <Build Include="dbo\Tables\ProjectPriority.sql" />
+    <Build Include="dbo\Tables\CalendarPersonal.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\project_features_resources.sql" />
+    <Build Include="dbo\Tables\task_verify_stack.sql" />
+    <Build Include="dbo\Tables\Tasks.sql" />
+    <Build Include="dbo\Tables\user_supervisers.sql" />
+    <Build Include="dbo\Tables\EmailTaskTargets.sql" />
+    <Build Include="dbo\Tables\MyMenu.sql" />
+    <Build Include="dbo\Tables\aspnet_Membership.sql" />
+    <Build Include="dbo\Tables\ProjectHoursAllocationsNotes.sql" />
+    <Build Include="dbo\Tables\Projects.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\Notes.sql" />
+    <Build Include="dbo\Tables\lookup_track_types.sql" />
+    <Build Include="dbo\Tables\FileFolders.sql" />
+    <Build Include="dbo\Tables\CalendarList.sql" />
+    <Build Include="dbo\Tables\LookupDismissalReasons.sql" />
+    <Build Include="dbo\Tables\jobs_stat.sql" />
+    <Build Include="dbo\Tables\Chat.sql" />
+    <Build Include="dbo\Tables\_patch_history.sql" />
+    <Build Include="dbo\Tables\Employees.sql" />
+    <Build Include="dbo\Tables\EmployeeDismissalReasons.sql" />
+    <Build Include="dbo\Tables\ChatMembers.sql" />
+    <Build Include="dbo\Tables\TodoUserSettings.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Tables\LookupRecruitSources.sql" />
+    <Build Include="dbo\Tables\aspnet_Profile.sql" />
+    <Build Include="dbo\Tables\SaritasaMessages.sql" />
+    <Build Include="dbo\Tables\LookupVendors.sql" />
+    <Build Include="dbo\Tables\document_status_history.sql" />
+    <Build Include="dbo\Tables\task_reestimations.sql" />
+    <Build Include="dbo\Tables\Documents.sql" />
+    <Build Include="dbo\Tables\LookupDepartments.sql" />
+    <Build Include="dbo\Tables\search_results.sql" />
+    <Build Include="dbo\Tables\lookup_user_types.sql" />
+    <Build Include="dbo\Tables\ProjectTags.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Views\_vNotificationCreatedBy.sql" />
+    <Build Include="dbo\Views\_vJobsType.sql" />
+    <Build Include="dbo\Views\_vTaskForRelated.sql" />
+    <Build Include="dbo\Views\_vProjectsDocuments.sql" />
+    <Build Include="dbo\Views\_vucReportListWidget.sql" />
+    <Build Include="dbo\Views\_vucProjectStatusReportListWidget.sql" />
+    <Build Include="dbo\Views\_vJobsReport.sql" />
+    <Build Include="dbo\Views\_vTaskAssignedUsers.sql" />
+    <Build Include="dbo\Views\_vFilesDocuments.sql" />
+    <Build Include="dbo\Views\_vucResourceListWidget.sql" />
+    <Build Include="dbo\Views\_vProjectCheckList.sql" />
+    <Build Include="dbo\Views\_vucSenderList.sql" />
+    <Build Include="dbo\Views\_vProjectResources.sql" />
+    <Build Include="dbo\Views\_vJobsTarget.sql" />
+    <Build Include="dbo\Views\_vContactsUsers.sql" />
+    <Build Include="dbo\Views\_vucTaskListWidget.sql" />
+    <Build Include="dbo\Views\_vUsersPerfomanceReview.sql" />
+    <Build Include="dbo\Views\_vContactsUsersClients.sql" />
+    <Build Include="dbo\Views\_vucClientListWidget.sql" />
+    <Build Include="dbo\Views\_vNotes.sql" />
+    <Build Include="dbo\Views\_vEmploymentScores.sql" />
+    <Build Include="dbo\Views\_vucTaskPushListWidget.sql" />
+    <Build Include="dbo\Views\_vucJobListWidget.sql" />
+    <Build Include="dbo\Views\vw_aspnet_Profiles.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\_vEmployeesUsersRoles.sql" />
+    <Build Include="dbo\Views\_vAllRelatedTo.sql" />
+    <Build Include="dbo\Views\_vucTaskAssignedListWidget.sql" />
+    <Build Include="dbo\Views\_vProjectManagers.sql" />
+    <Build Include="dbo\Views\_vucContactListWidget.sql" />
+    <Build Include="dbo\Views\_vTasksBoomerangs.sql" />
+    <Build Include="dbo\Views\_vProjectJobDuration.sql" />
+    <Build Include="dbo\Views\_vJobsByClientAndProject.sql" />
+    <Build Include="dbo\Views\_vDailyReportList.sql" />
+    <Build Include="dbo\Views\_vChatMembers.sql" />
+    <Build Include="dbo\Views\_vJobsDepartments.sql" />
+    <Build Include="dbo\Views\_vSearchResults.sql" />
+    <Build Include="dbo\Views\_vTaskLastPushes.sql" />
+    <Build Include="dbo\Views\_vCalendarEvents.sql" />
+    <Build Include="dbo\Views\_vucFileListWidget.sql" />
+    <Build Include="dbo\Views\vw_aspnet_WebPartState_Paths.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\_vucNotesListWidget.sql" />
+    <Build Include="dbo\Views\vw_aspnet_WebPartState_Shared.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\vw_aspnet_WebPartState_User.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\_vTaskPushes.sql" />
+    <Build Include="dbo\Views\_vProjectOrderPayments.sql" />
+    <Build Include="dbo\Views\_vEmployeesUsers.sql" />
+    <Build Include="dbo\Views\_vProjectChangeOrdersList.sql" />
+    <Build Include="dbo\Views\_vCalendarPersonal.sql" />
+    <Build Include="dbo\Views\_vTasksStatus.sql" />
+    <Build Include="dbo\Views\vw_aspnet_Roles.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\_vJobWithLimit.sql" />
+    <Build Include="dbo\Views\vw_aspnet_UsersInRoles.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\_vBlogs.sql" />
+    <Build Include="dbo\Views\_vucRCBTask.sql" />
+    <Build Include="dbo\Views\_vClientParent.sql" />
+    <Build Include="dbo\Views\_vTaskJobDuration.sql" />
+    <Build Include="dbo\Views\_vucProjectAbove100Limit.sql" />
+    <Build Include="dbo\Views\_vTasksDocuments.sql" />
+    <Build Include="dbo\Views\_vFavoriteTasks.sql" />
+    <Build Include="dbo\Views\_vRelatedToJob.sql" />
+    <Build Include="dbo\Views\_vUserAuth.sql" />
+    <Build Include="dbo\Views\vw_aspnet_Applications.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\vw_aspnet_Users.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\_vLogIP.sql" />
+    <Build Include="dbo\Views\_vEmployeesUsersDocuments.sql" />
+    <Build Include="dbo\Views\_vucRCBClient.sql" />
+    <Build Include="dbo\Views\_vUsersRoles.sql" />
+    <Build Include="dbo\Views\vw_aspnet_MembershipUsers.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\_vToDoList.sql" />
+    <Build Include="dbo\Views\_vUsers.sql" />
+    <Build Include="dbo\Views\_vucProjectListWidget.sql" />
+    <Build Include="dbo\Views\_vUsersDocuments.sql" />
+    <Build Include="Security\aspnet_Membership_FullAccess.sql" />
+    <Build Include="Security\aspnet_Membership_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Membership_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_Personalization_FullAccess.sql" />
+    <Build Include="Security\aspnet_Personalization_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Personalization_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_Profile_FullAccess.sql" />
+    <Build Include="Security\aspnet_Profile_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Profile_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_Roles_FullAccess.sql" />
+    <Build Include="Security\aspnet_Roles_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Roles_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_WebEvent_FullAccess.sql" />
+    <Build Include="Security\aspnet_ChangeNotification_ReceiveNotificationsOnlyAccess.sql" />
+    <Build Include="Security\version.sql" />
+    <Build Include="Security\crmuser.sql" />
+    <Build Include="Security\WINCRM_Administrator.sql" />
+    <Build Include="Security\backup.sql" />
+    <Build Include="Security\crmuserro.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\LastDayPriorYear.sql" />
+    <Build Include="dbo\Functions\MondayCurrentWeek.sql" />
+    <Build Include="dbo\Functions\Time.sql" />
+    <Build Include="dbo\Functions\TimeOnly.sql" />
+    <Build Include="dbo\Functions\getParentTaskID.sql" />
+    <Build Include="dbo\Functions\Date.sql" />
+    <Build Include="dbo\Functions\NextWorkDayForUser.sql" />
+    <Build Include="dbo\Functions\ProperCase.sql" />
+    <Build Include="dbo\Functions\TimeSpan.sql" />
+    <Build Include="dbo\Functions\getBranchWorkedDays.sql" />
+    <Build Include="dbo\Functions\TimeSpanUnits.sql" />
+    <Build Include="dbo\Functions\FirstDayMonth.sql" />
+    <Build Include="dbo\Functions\LastDayMonth.sql" />
+    <Build Include="dbo\Functions\FirstDayWeek.sql" />
+    <Build Include="dbo\Functions\LastDayWeek.sql" />
+    <Build Include="dbo\Functions\SetMaxTime.sql" />
+    <Build Include="dbo\Functions\DayLightSave.sql" />
+    <Build Include="dbo\Functions\getOffsetTimeZoneString.sql" />
+    <Build Include="dbo\Functions\getLocalUserTime.sql" />
+    <Build Include="dbo\Functions\strLength.sql" />
+    <Build Include="dbo\Functions\getLateTime.sql" />
+    <Build Include="dbo\Functions\GetWorkingWeekDaysThisMonth.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\getPersonalDayOffs.sql" />
+    <Build Include="dbo\Functions\getPersonalWorkedDays.sql" />
+    <Build Include="dbo\Functions\DateOnly.sql" />
+    <Build Include="dbo\Functions\DateTime.sql" />
+    <Build Include="dbo\Functions\FirstDayQuarter.sql" />
+    <Build Include="dbo\Functions\FirstDayYear.sql" />
+    <Build Include="dbo\Functions\getActualQuoteIDForProject.sql" />
+    <Build Include="dbo\Functions\LastDayCurrentMonth.sql" />
+    <Build Include="dbo\Functions\LastDayCurrentYear.sql" />
+    <Build Include="dbo\Functions\getDocStatusID.sql" />
+    <Build Include="dbo\Functions\LastDayPriorMonth.sql" />
+    <Build Include="dbo\Functions\getAllTaskID.sql" />
+    <Build Include="dbo\Functions\getAllTargetID.sql" />
+    <Build Include="dbo\Functions\getAllTargetID2.sql" />
+    <Build Include="dbo\Functions\getNotesRelatedIDs.sql" />
+    <Build Include="dbo\Functions\getFilesRelatedIDs.sql" />
+    <Build Include="dbo\Functions\getTaskStatusesForStatusFilter.sql" />
+    <Build Include="dbo\Functions\getManagerListByProjectID.sql" />
+    <Build Include="dbo\Functions\getAllocatedHoursDaily.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\getAssignedHoursDaily.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_calcSelfEduAndOverbudget.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_calcUserOvertime.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_calcUserUtilization.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_clients_getWorksHours.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_document_calcs_Change.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_document_calcs_date_getDaysJobs.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_document_calcs_date_getDaysJobsUtilization.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_document_calcs_date_getUserMetrics.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_getUserUtlization.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getAllJobsDuration.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getClientJobStatistic.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getDailyUsersJobsList.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getDepartmentsTotalByDate.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getDepartmentSummaryByDate.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getEmployeeJobStatistic.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getForJobsMetric.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getProjectSummaryByComponents.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getProjectSummaryByDate.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getProjectSummaryBySprints.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getProjectSummaryByUsers.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_getUserDaysJobs.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_setNewManHours.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_stat_calculate.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_jobs_updateProjectDuration.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_lookup_departments_updateJobDayTime.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_lookup_document_statuses_getDocStatusID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_lookup_document_statuses_getStatusesForGenTrack.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_notifications_getNewForUser.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_permissions_getUserPermissions.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_permissions_setRolePermission.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_role_permissions_AddFirstPermissionForRole.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_role_permissions_getUserPermissions.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_role_permissions_setRolePermission.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_search_Search.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_setCalcDate.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_Tasks_GetCountForStatusFilter.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_Tasks_GetCountForStatusFilterAll.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_tasks_setNoTask.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_tasks_setProjAndClientID.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_tasks_UpdateStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_users_getShameUsers.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vAllRelatedTo_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vAllRelatedTo_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vBlogs_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vBlogs_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vCalendarEvents_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vCalendarEvents_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vCalendarPersonal_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vCalendarPersonal_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vChatMembers_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vChatMembers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vClientParent_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vClientParent_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vContactsUsers_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vContactsUsers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vContactsUsersClients_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vContactsUsersClients_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vDailyReportList_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vDailyReportList_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmployeesUsers_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmployeesUsers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmployeesUsersDocuments_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmployeesUsersDocuments_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmployeesUsersRoles_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmployeesUsersRoles_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmploymentScores_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vEmploymentScores_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vFavoriteTasks_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vFavoriteTasks_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vFilesDocuments_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vFilesDocuments_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsByClientAndProject_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsByClientAndProject_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsDepartments_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsDepartments_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsReport_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsReport_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsTarget_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsTarget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsType_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobsType_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobWithLimit_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vJobWithLimit_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vLogIP_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vLogIP_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vNotes_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vNotes_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vNotificationCreatedBy_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vNotificationCreatedBy_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectChangeOrdersList_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectChangeOrdersList_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectCheckList_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectCheckList_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectJobDuration_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectJobDuration_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectManagers_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectManagers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectOrderPayments_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectOrderPayments_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectResources_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectResources_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectsDocuments_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vProjectsDocuments_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vRelatedToJob_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vRelatedToJob_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskAssignedUsers_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskAssignedUsers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskForRelated_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskForRelated_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskJobDuration_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskJobDuration_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskLastPushes_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskLastPushes_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskPushes_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTaskPushes_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vTasksBoomerangs_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTasksBoomerangs_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTasksDocuments_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTasksDocuments_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTasksStatus_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vTasksStatus_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucClientListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucClientListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucContactListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucContactListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucFileListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucFileListWidget_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucJobListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucJobListWidget_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucNotesListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucNotesListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucProjectAbove100Limit_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucProjectAbove100Limit_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucProjectListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucProjectListWidget_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucProjectStatusReportListWidget_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucProjectStatusReportListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucRCBClient_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucRCBClient_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucRCBTask_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucRCBTask_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucReportListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucReportListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucResourceListWidget_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucResourceListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucSenderList_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucSenderList_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucTaskAssignedListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucTaskAssignedListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vucTaskListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucTaskListWidget_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucTaskPushListWidget_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vucTaskPushListWidget_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vUserAuth_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vUserAuth_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vUsers_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vUsers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vUsersDocuments_Get.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vUsersDocuments_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\_vUsersRoles_Get.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\_vUsersRoles_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_GetByAddressID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\addresses_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Applications_CreateApplication.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_CheckSchemaVersion.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Profile_DeleteInactiveProfiles.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Profile_DeleteProfiles.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Profile_GetNumberOfInactiveProfiles.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Profile_GetProfiles.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Profile_GetProperties.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Profile_SetProperties.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\AspNet_SqlCachePollingStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\AspNet_SqlCacheQueryRegisteredTablesStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\AspNet_SqlCacheRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\AspNet_SqlCacheUnRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\AspNet_SqlCacheUpdateChangeIdStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Users_CreateUser.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_Users_DeleteUser.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_UsersInRoles_AddUsersToRoles.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_UsersInRoles_FindUsersInRole.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_UsersInRoles_GetRolesForUser.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_UsersInRoles_GetUsersInRoles.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_UsersInRoles_IsUserInRole.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\aspnet_UsersInRoles_RemoveUsersFromRoles.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_GetByAuthID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_GetByEmail.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_GetByLDAPLogin.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_GetByLogin.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_GetBySessionKey.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\authorizationData_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_GetByBlogID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_GetByRatingID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogRatings_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_GetByCommentBlogID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Blogs_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_GetByParentCommentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\blogs_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_GetByCeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_GetByCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_GetByDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarEvents_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_GetByBranchID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_GetByCID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_GetByDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarList_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_GetByClId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_GetByDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_GetByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\calendarPersonal_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_GetByApprovedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_GetByFileID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_GetByPeriodID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CalendarPersonalPeriods_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_GetByLastCommentBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chat_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_GetByChatId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_GetByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\chatMembers_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_GetByCmID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_GetByEmployeeUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_GetByRoleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\client_managers_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_GetByMainContactUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_GetByParentClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\clients_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_GetByContactID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\contacts_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\CRM_SQL_JOB_CalculateFields_15m.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\CRM_SQL_JOB_CalculateFields_3H.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\CRM_SQL_JOB_CalculateFields_OneInDay.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_GetByDailyReportID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_GetByReportDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\daily_reports_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_GetByCalcID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_GetByDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_date_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_GetByCalcID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_calcs_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_Find.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_Get_List.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_GetByCreatedBy.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_GetByDocumentID.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_GetByDocumentIDStatusHistoryID.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_GetByStatusHistoryID.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_GetByStatusID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_GetByTrackID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_status_history_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_GetByTrackID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_GetByTrackTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\document_tracks_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByCreated.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByDocumentIDCreatedByDeleted.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByDocumentIDGeneralStatusID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByDocumentIDGeneralStatusIDCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByDocumentIDGeneralStatusIDCreatedByCreated.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByGeneralStatusID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByGeneralStatusIDCreatedByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByGeneralStatusIDDocumentIDCreatedByCreated.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByGeneralStatusIDProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByProjectIDGeneralStatusID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByTypeIDDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByUpdated.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetByUpdatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\documents_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_GetByEmailTemplateID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_GetByTemplateName.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\email_templates_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_GetByEmailID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_GetByTypeIDTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_GetByTypeIDTargetIDEmailID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emails_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_GetByID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\emailTaskTargets_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetByBranchId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetByBucketTaskId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetByRecruitedByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetByRecruitSourceId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetByVendorId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Employees_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_GetByCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_GetByScoreID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\employmentScores_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Events_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Events_Find.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\Events_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Events_GetByCreatorID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Events_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Events_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\Events_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\Events_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_GetByFavoriteID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_GetByUserIDDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\favorites_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_GetByFolderID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\fileFolders_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_GetByFileID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_GetByFolderID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_GetByUniqueKey.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\files_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_GetBySourceID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\JiraMapping_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByBillableProjectIDClosedDuration.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByClientIDClosedJobDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByCreated.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByCreatedByClosedJobDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByCreatedByIsErrorJobID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByIsErrorErrorBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Jobs_GetByJobDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Jobs_GetByJobDateProjectIdTargetId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByJobID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByJobIDCreatedByProjectIDJobDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Jobs_GetByProjectId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Jobs_GetByProjectIdJobDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Jobs_GetByUserBranchId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Jobs_GetByUserDepartmentId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\Jobs_GetByUserIdFromAcceptedJobsUsers.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetByWorkType.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_GetByBranchID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_GetByDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_GetByDepartmentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_GetByJobStatID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_GetByWorkTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_stat_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\jobs_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_GetByIP.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_GetByLogID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\logIP_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calc_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calc_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calc_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calc_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calc_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calc_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calc_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calendar_events_type_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calendar_events_type_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calendar_events_type_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calendar_events_type_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calendar_events_type_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calendar_events_type_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_calendar_events_type_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_GetByStatusID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_GetByTrackID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_statuses_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_document_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_email_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_email_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_email_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_email_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_email_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_email_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_email_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_file_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_file_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_file_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_file_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_file_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_file_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_file_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_note_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_note_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_note_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_note_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_note_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_note_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_note_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_phone_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_phone_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_phone_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_phone_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_phone_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_phone_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_phone_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_project_requisite_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_project_requisite_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_project_requisite_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_project_requisite_types_GetByRequisiteID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_project_requisite_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_project_requisite_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_project_requisite_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rule_groups_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rule_groups_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rule_groups_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rule_groups_GetByGroupID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rule_groups_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rule_groups_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rule_groups_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_GetByGroupID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_GetByRuleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_rules_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_task_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_task_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_task_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_task_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_task_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_task_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_task_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_track_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_track_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_track_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_track_types_GetByTrackTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_track_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_track_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_track_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_GetByRoleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_GetByRoleName.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_roles_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_types_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_types_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_types_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_types_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_types_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_types_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_user_types_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_GetByDepartmentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_GetByParentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_GetByWorkTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\lookup_workTypes_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupAddressTypes_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupAddressTypes_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupAddressTypes_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupAddressTypes_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupAddressTypes_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupAddressTypes_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupAddressTypes_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_GetByCeoUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupBranch_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_GetByParentId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupCheckList_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupDepartments_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupDepartments_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupDepartments_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupDepartments_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupDepartments_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupDepartments_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\LookupDepartments_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_GetByNoteID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_GetByParentNoteID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notes_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetByAddressee.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetByAddresseeReceivedContentTypeNotificationID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetByAddresseeReceivedTypeNotificationID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetByAddresseeReceivedTypeNotificationIDCreatedByCreated.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetByContentType.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetByCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetByNotificationID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\notifications_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_GetByPermissionID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_GetByRoleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_GetByRuleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\permissions_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_GetByPhoneID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_GetByTargetIDTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_GetByTypeIDPhoneIDTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_GetByTypeIDTargetIDPhoneID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\phones_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_GetByID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_GetByID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_GetByProjectFeatureID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_resources_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_features_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_GetByManagerID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_GetByRoleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_managers_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_GetByCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_GetByID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_GetByReviewedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_GetByReviewTo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_GetByUpdatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_reviews_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_GetByID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\project_sprints_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_GetByChangeOrderID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_GetByMilestouneId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_GetByProjectId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_GetByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectChangeOrders_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_GetByCheckID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_GetByProjectCheckId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectCheckList_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_GetByProjectId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectFinancialMilestones_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectMilestones_GetByCreatedByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectMilestones_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_GetByMilestoneID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectMilestones_GetByUpdatedByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectMilestones_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectPriority_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectPriority_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectPriority_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectPriority_GetByPriorityID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectPriority_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectPriority_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectPriority_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetByCreatedByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetByProjectId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetByUpdatedByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetByUserId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetByUserIdProjectId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetByWorkTypeId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectResources_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByDiscountID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByDocumentIDProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByParentProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByPriorityID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projects_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_GetByCreatedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectWorkAllocation_GetByFinishDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_GetByModifiedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\ProjectWorkAllocation_GetByStartDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_GetByWorkAllocationID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_GetByWorkTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\projectWorkAllocation_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_GetByReportID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\reports_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_GetByPermissionID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_GetByRoleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\role_permissions_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_GetByTagID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_GetByTitle.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tags_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByAssignedBy.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByDeletedFinishedWorkTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByDeletedTaskIDTaskAssignmentIDUserIDFinishedWork.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByFinishedWorkTaskIDTaskAssignmentIDUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByFinishedWorkUserIDTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByTaskAssignmentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByTaskIDUserIDDeletedFinishedWorkTaskAssignmentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByTaskIDUserIDTaskAssignmentIDFinishedWork.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetByUserIDDeletedFinishedWorkTaskIDTaskAssignmentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_assigned_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_GetByBoomerangID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_GetByTaskIDUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_boomerangs_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_GetByDepartmentId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_GetByTaskId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_departments_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetByInitiatorID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetByPushID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetByRecipientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetByRecipientIDTaskIDPushID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetByTaskIDPushIDRecipientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetByTaskIDRecipientIDPushID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_push_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetByApprovedByIDPM.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetByApprovedByIDTM.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetByCreatedByID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetByDeclinedByIDPM.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetByDeclinedByIDTM.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetByID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_reestimations_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_GetByTaskVerifyID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\task_verify_stack_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByClientID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByCurrentPushID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByCurrentPushIDTaskIDDocumentIDTypeIDFinishDate.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByDepartmentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByDocumentID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByDocumentIDTaskIDProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByDocumentIDTypeIDTaskIDCurrentPushIDProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByEmailMessageID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByFeatureID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByLastestReestimationId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByProjectIDTaskIDCurrentPushIDDocumentIDTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByProjectIDTaskIDTypeIDDocumentIDCurrentPushID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetBySprintID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTaskIDDocumentIDTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTaskIDTypeIDProjectIDCurrentPushIDDocumentIDTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTaskVerifyID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTypeID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTypeIDTaskIDDocumentIDCurrentPushIDProjectID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByTypeIDTaskIDProjectIDCurrentPushIDDocumentIDTargetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetByWorkType.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_Find.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_GetByTagID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_GetByTask_tagID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_GetByTaskID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_tags_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\tasks_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_GetByRoleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_GetByUserRoleID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_roles_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_GetBySuperviserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_GetByUserIDSuperviserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_GetPaged.sql" />
+    <Build Include="dbo\Stored Procedures\Procs1\user_supervisers_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\user_supervisers_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_GetByContentType.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_GetBySetID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_GetByUserID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\userNoteSettings_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_Delete.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_Find.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_Get_List.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByDepartmentId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByDocumentId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByFirstName.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetById.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByIdDocumentId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\Users_GetByJobIdFromAcceptedJobsUsers.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByLastName.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetBySuperviserIDFromUser_supervisers.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByTypeId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByUserIDFromUser_supervisers.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\Users_GetByVendorId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetByWorkTypeId.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_GetPaged.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Procs2\users_Update.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\User Defined Types\TargetList.sql" />
+    <Build Include="Security\PasswordFieldCertificate.sql" />
+    <Build Include="Security\MasterKeys.sql" />
+    <Build Include="Security\aspnet_ChangeNotification_ReceiveNotificationsOnlyAccess_1.sql" />
+    <Build Include="Security\aspnet_Membership_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Membership_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Membership_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_Personalization_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Personalization_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Personalization_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_Profile_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Profile_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Profile_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_Roles_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Roles_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Roles_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_WebEvent_FullAccess_1.sql" />
+    <Build Include="Security\PasswordFieldSymmetricKey.sql" />
+    <Build Include="dbo\Stored Procedures\__SizeOfFilesCreatedEachMonth.sql" />
+    <Build Include="dbo\Stored Procedures\__EmployeesByBranch.sql" />
+    <Build Include="dbo\Stored Procedures\__ProjectsReportByPeriod.sql" />
+  </ItemGroup>
+</Project>

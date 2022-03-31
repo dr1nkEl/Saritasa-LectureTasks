@@ -1,0 +1,88 @@
+17.02.2022 16:57:46	This log contains information about the import schema operation into project 'Saritasa.CRM' on computer 'DESKTOP-3L63A3C' by user 'dr1nk'.
+17.02.2022 16:57:46	Import of database schema has started.
+17.02.2022 16:57:52	Gathering database credentials
+17.02.2022 16:57:52	Gathering database options
+17.02.2022 16:57:52	Gathering generic database scoped configuration option
+17.02.2022 16:57:52	Gathering users
+17.02.2022 16:57:52	Gathering roles
+17.02.2022 16:57:52	Gathering application roles
+17.02.2022 16:57:52	Gathering role memberships
+17.02.2022 16:57:52	Gathering filegroups
+17.02.2022 16:57:52	Gathering files
+17.02.2022 16:57:52	Gathering full-text catalogs
+17.02.2022 16:57:52	Gathering assemblies
+17.02.2022 16:57:52	Gathering certificates
+17.02.2022 16:57:52	Gathering asymmetric keys
+17.02.2022 16:57:52	Gathering symmetric keys
+17.02.2022 16:57:53	Gathering encrypted symmetric keys
+17.02.2022 16:57:53	Gathering database encryption keys
+17.02.2022 16:57:53	Gathering schemas
+17.02.2022 16:57:53	Gathering XML schema collections
+17.02.2022 16:57:53	Gathering user-defined data types
+17.02.2022 16:57:53	Gathering user-defined types
+17.02.2022 16:57:53	Gathering table types
+17.02.2022 16:57:53	Gathering unique keys for table types
+17.02.2022 16:57:53	Gathering primary keys for table types
+17.02.2022 16:57:53	Gathering indexes for table types
+17.02.2022 16:57:53	Gathering check constraints for table types
+17.02.2022 16:57:53	Gathering default constraints for table types
+17.02.2022 16:57:53	Gathering partition functions
+17.02.2022 16:57:54	Gathering partition schemes
+17.02.2022 16:57:54	Gathering functions
+17.02.2022 16:57:55	Gathering encrypted functions
+17.02.2022 16:57:55	Gathering aggregates
+17.02.2022 16:57:55	Gathering procedures
+17.02.2022 16:57:57	Gathering encrypted procedures
+17.02.2022 16:57:57	Gathering tables
+17.02.2022 16:57:57	Gathering primary keys
+17.02.2022 16:57:57	Gathering unique constraints
+17.02.2022 16:57:57	Gathering foreign keys
+17.02.2022 16:57:57	Gathering default constraints
+17.02.2022 16:57:57	Gathering check constraints
+17.02.2022 16:57:57	Gathering views
+17.02.2022 16:57:58	Gathering encrypted views
+17.02.2022 16:57:58	Gathering indexes
+17.02.2022 16:57:58	Gathering statistics
+17.02.2022 16:57:58	Gathering full-text index stoplists
+17.02.2022 16:57:58	Gathering search property lists
+17.02.2022 16:57:58	Gathering search properties
+17.02.2022 16:57:58	Gathering full-text indexes
+17.02.2022 16:57:58	Gathering column store indexes
+17.02.2022 16:57:58	Gathering spatial indexes
+17.02.2022 16:57:58	Gathering XML indexes
+17.02.2022 16:57:58	Gathering Selective XML indexes
+17.02.2022 16:57:58	Gathering encrypted triggers
+17.02.2022 16:57:58	Gathering triggers
+17.02.2022 16:57:58	Gathering encrypted and clr ddl triggers
+17.02.2022 16:57:58	Gathering ddl triggers
+17.02.2022 16:57:58	Creating edge constraints
+17.02.2022 16:57:58	Gathering synonyms
+17.02.2022 16:57:58	Gathering defaults
+17.02.2022 16:57:58	Gathering data constraint uddt bindings
+17.02.2022 16:57:58	Gathering rules
+17.02.2022 16:57:58	Gathering data constraint uddt bindings
+17.02.2022 16:57:58	Gathering message types
+17.02.2022 16:57:58	Gathering queues
+17.02.2022 16:57:58	Gathering contracts
+17.02.2022 16:57:58	Gathering services
+17.02.2022 16:57:58	Gathering routes
+17.02.2022 16:57:58	Gathering event notifications
+17.02.2022 16:57:58	Gathering remote service bindings
+17.02.2022 16:57:58	Gathering broker priorities
+17.02.2022 16:57:58	Gathering database audit specifications
+17.02.2022 16:57:58	Gathering signatures
+17.02.2022 16:57:58	Gathering data compression options
+17.02.2022 16:57:58	Gathering sequence types
+17.02.2022 16:57:58	Gathering security policies
+17.02.2022 16:57:58	Gather column encryption keys
+17.02.2022 16:57:58	Gathering column master keys
+17.02.2022 16:57:58	Gathering external data sources
+17.02.2022 16:57:58	Gathering external file formats
+17.02.2022 16:57:58	Gathering external tables
+17.02.2022 16:57:58	Gathering extended properties
+17.02.2022 16:57:58	Gathering assemblies
+17.02.2022 16:58:00	Scanning project for duplicate elements
+17.02.2022 16:58:00	Finished duplicate element processing
+17.02.2022 16:58:12	Finished importing database.
+17.02.2022 16:58:12	A summary of the import was saved to the following location: C:\Users\dr1nk\source\repos\camp-dotnet-w2022-mikhail-barabanov\src\TSQLPractice\Saritasa.CRM\Import Schema Logs\Saritasa.CRM_20220217115746.log
+17.02.2022 16:58:12	Click Finish to continue...

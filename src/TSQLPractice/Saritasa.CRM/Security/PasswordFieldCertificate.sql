@@ -1,0 +1,4 @@
+﻿CREATE CERTIFICATE [PasswordFieldCertificate]
+    AUTHORIZATION [dbo]
+    WITH SUBJECT = N'Password Fields', START_DATE = N'2008-11-24T16:23:41', EXPIRY_DATE = N'2009-11-24T16:23:41';
+

@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+	<CodeAnalysisRuleSet>..\..\..\tools\Saritasa.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.0.1" />
+    <PackageReference Include="NLog" Version="4.7.13" />
+    <PackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.406">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Saritasa.JiraDayIssues.Domain\Saritasa.JiraDayIssues.Domain.csproj" />
+    <ProjectReference Include="..\Saritasa.JiraDayIssues.Infrastructure\Saritasa.JiraDayIssues.Infrastructure.csproj" />
+    <ProjectReference Include="..\Saritasa.JiraDayIssues.UseCases\Saritasa.JiraDayIssues.UseCases.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

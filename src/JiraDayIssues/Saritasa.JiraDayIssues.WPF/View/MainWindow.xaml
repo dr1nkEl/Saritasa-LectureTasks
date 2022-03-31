@@ -1,0 +1,106 @@
+﻿<Window x:Class="Saritasa.JiraDayIssues.WPF.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Saritasa.JiraDayIssues.WPF.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize" Height="800" Width="800">
+
+
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label HorizontalAlignment="Center">Date</Label>
+            <DatePicker x:Name="datePicker" SelectedDateFormat="Short" FirstDayOfWeek="Monday" SelectedDate="{Binding IssueModel.SelectedDate}"></DatePicker>
+            <Button Command="{Binding IssueModel.CancelCommand}">Cancel request</Button>
+
+            <ContentPresenter>
+                <ContentPresenter.Style>
+                    <Style TargetType="ContentPresenter">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IssueModel.IsRunning}" Value="False">
+                                <Setter Property="Visibility" Value="Hidden" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IssueModel.IsRunning}" Value="True">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentPresenter.Style>
+                <ContentPresenter.Content>
+                    <Label>Loading...</Label>
+                </ContentPresenter.Content>
+            </ContentPresenter>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Height="Auto" HorizontalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="Black" BorderThickness="2" Width="Auto">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock>Issues</TextBlock>
+                        <ListBox ItemsSource="{Binding Path=IssueModel.Issues}" SelectedItem="{Binding IssueModel.SelectedIssue}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Vertical"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Key}"></TextBlock>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" Width="Auto">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderBrush="Black" BorderThickness="2" Width="200"  VerticalAlignment="Top">
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Worklog</TextBlock>
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Width="200">
+                                <TextBlock TextAlignment="Center" VerticalAlignment="Center">Time</TextBlock>
+                            </Border>
+                        </StackPanel>
+
+
+                        <ItemsControl ItemsSource="{Binding Path=IssueModel.SelectedIssue.Worklog}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Vertical"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border BorderThickness="1" BorderBrush="Black">
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Description}" Width="200"/>
+                                        </Border>
+                                        <Border BorderThickness="1" BorderBrush="Black">
+                                            <TextBlock Text="{Binding Path=TimeSpent.TotalHours}" Width="200" TextAlignment="Center" VerticalAlignment="Center">h</TextBlock>
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

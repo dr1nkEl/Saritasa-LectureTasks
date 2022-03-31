@@ -1,0 +1,46 @@
+﻿
+/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By:  ()
+-- Purpose: Select records from the Jobs table through an index
+----------------------------------------------------------------------------------------------------
+*/
+
+
+CREATE PROCEDURE dbo.[jobs_GetByJobIDCreatedByProjectIDJobDate]
+(
+
+	@JobID bigint   ,
+
+	@CreatedBy int   ,
+
+	@ProjectId int   ,
+
+	@JobDate datetime   
+)
+AS
+
+
+				SELECT
+					[jobID],
+					[Billable],
+					[Description],
+					[Duration],
+					[TargetId],
+					[CreatedBy],
+					[ClientId],
+					[ProjectId],
+					[JobDate],
+					[IsError],
+					[ErrorBy],
+					[ErrorReason],
+					[WorkType]
+				FROM
+					[dbo].[Jobs]
+				WHERE
+					[jobID] = @JobID
+					AND [CreatedBy] = @CreatedBy
+					AND [ProjectId] = @ProjectId
+					AND [JobDate] = @JobDate
+				SELECT @@ROWCOUNT

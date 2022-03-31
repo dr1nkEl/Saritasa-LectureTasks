@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Tags] (
+    [tagID] BIGINT        IDENTITY (1, 1) NOT NULL,
+    [Title] VARCHAR (255) NOT NULL,
+    PRIMARY KEY CLUSTERED ([tagID] ASC) WITH (FILLFACTOR = 80)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [tags_title]
+    ON [dbo].[Tags]([Title] ASC) WITH (FILLFACTOR = 80);
+

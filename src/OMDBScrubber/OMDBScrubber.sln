@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saritasa.OMDBScrubber.WEB", "Saritasa.OMDBScrubber.WEB\Saritasa.OMDBScrubber.WEB.csproj", "{64C4A282-BCB6-4C27-9EEB-416DBDF7C76A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saritasa.OMDBScrubber.UseCases", "Saritasa.OMDBScrubber.UseCases\Saritasa.OMDBScrubber.UseCases.csproj", "{AAA74F2B-0325-49BE-994F-ADE9FF9DA3A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saritasa.OMDBScrubber.Infrastructure", "Saritasa.OMDBScrubber.Infrastructure\Saritasa.OMDBScrubber.Infrastructure.csproj", "{4C04D53D-DF16-48A8-ACF0-48993DC659AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saritasa.OMDBScrubber.Infrastructure.Common", "Saritasa.OMDBScrubber.Infrastructure.Common\Saritasa.OMDBScrubber.Infrastructure.Common.csproj", "{2D171E62-D375-40B8-ADEF-3A34E44DC458}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saritasa.OMDBScrubber.Infrastructure.Abstractions", "Saritasa.OMDBScrubber.Infrastructure.Abstractions\Saritasa.OMDBScrubber.Infrastructure.Abstractions.csproj", "{267EACE5-CDA9-4C56-9C07-A3DAA1CEC4F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saritasa.OMDBScrubber.Domain", "Saritasa.OMDBScrubber.Domain\Saritasa.OMDBScrubber.Domain.csproj", "{C06CCFAB-A3A5-420D-ACF7-DF01D2077AA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saritasa.OMDBScrubber.Infrastructure.DataAccess", "Saritasa.OMDBScrubber.Infrastructure.DataAccess\Saritasa.OMDBScrubber.Infrastructure.DataAccess.csproj", "{AEF7F90E-4752-4488-A1E5-D11F4D0F786F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64C4A282-BCB6-4C27-9EEB-416DBDF7C76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C4A282-BCB6-4C27-9EEB-416DBDF7C76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C4A282-BCB6-4C27-9EEB-416DBDF7C76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C4A282-BCB6-4C27-9EEB-416DBDF7C76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA74F2B-0325-49BE-994F-ADE9FF9DA3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA74F2B-0325-49BE-994F-ADE9FF9DA3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA74F2B-0325-49BE-994F-ADE9FF9DA3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA74F2B-0325-49BE-994F-ADE9FF9DA3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C04D53D-DF16-48A8-ACF0-48993DC659AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C04D53D-DF16-48A8-ACF0-48993DC659AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C04D53D-DF16-48A8-ACF0-48993DC659AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C04D53D-DF16-48A8-ACF0-48993DC659AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D171E62-D375-40B8-ADEF-3A34E44DC458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D171E62-D375-40B8-ADEF-3A34E44DC458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D171E62-D375-40B8-ADEF-3A34E44DC458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D171E62-D375-40B8-ADEF-3A34E44DC458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{267EACE5-CDA9-4C56-9C07-A3DAA1CEC4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{267EACE5-CDA9-4C56-9C07-A3DAA1CEC4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{267EACE5-CDA9-4C56-9C07-A3DAA1CEC4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{267EACE5-CDA9-4C56-9C07-A3DAA1CEC4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06CCFAB-A3A5-420D-ACF7-DF01D2077AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06CCFAB-A3A5-420D-ACF7-DF01D2077AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06CCFAB-A3A5-420D-ACF7-DF01D2077AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06CCFAB-A3A5-420D-ACF7-DF01D2077AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF7F90E-4752-4488-A1E5-D11F4D0F786F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF7F90E-4752-4488-A1E5-D11F4D0F786F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF7F90E-4752-4488-A1E5-D11F4D0F786F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF7F90E-4752-4488-A1E5-D11F4D0F786F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCB1CD71-D39C-455B-8AC1-39B47D911156}
+	EndGlobalSection
+EndGlobal

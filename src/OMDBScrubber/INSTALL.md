@@ -1,0 +1,1 @@
+Provide postgres connection string and omdb api key in appsettings.json.template and rename it to appsettings.json to use app.

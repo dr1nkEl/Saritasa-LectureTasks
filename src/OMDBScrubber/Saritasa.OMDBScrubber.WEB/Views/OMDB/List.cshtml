@@ -1,0 +1,47 @@
+﻿@model OMDBListViewModel
+@{
+    ViewContext.ClientValidationEnabled = true;
+}
+
+<form href="@Url.Action("List", "OMDB")" method="get" id="form" >
+    <div asp-validation-summary="ModelOnly"/>
+
+    <div >
+        @Html.EditorFor(y=>y.SearchProperties)
+        <button>Search</button>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>IMDB Id</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Runtime mins</th>
+            <th>Genre</th>
+            <th>Actors</th>
+            <th>Rating</th>
+        </tr>
+        @foreach (var movie in Model.Page)
+        {
+            <tr>
+                <td>@movie.ImdbId</td>
+                <td>@movie.Title</td>
+                <td>@movie.ReleaseDate.ToString("dd.MM.yyyy")</td>
+                <td>@movie.Duration</td>
+                <td>@string.Join(',',movie.Genre)</td>
+                <td>@string.Join(',',movie.Actors.Select(x=>x.Name))</td>
+                <td>@movie.ImdbRating</td>
+            </tr>
+        }
+    </table>
+    
+    <input hidden id="page" name="page" value="1"/>
+    @if (!Model.Page.IsFirstPage)
+    {
+        <button type="button" onclick="PaginationClick(@Model.Page.Page-1)">Previous</button>
+    }
+    @if (!Model.Page.IsLastPage)
+    {
+        <button type="button" onclick="PaginationClick(@Model.Page.Page+1)">Next</button>
+    } 
+</form>

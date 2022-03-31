@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Task</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="main-form">
+        <button id="people" type="button" class="btn btn-primary">People</button>
+        <button id="planets" type="button" class="btn btn-primary">Planets</button>
+        <button id="starships" type="button" class="btn btn-primary">Starships</button>
+      </form>
+      <hr />
+
+      <div id="output" class="alert alert-primary">
+        Output
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      $(function(){
+        /*
+        * Event holding 'people' button click and showing people.
+        * @event
+        */
+        $('#people').on('click', async function(){
+          const result = (await GetFromRequest('https://swapi.dev/api/people')).map(function(person){
+            const res = {
+              'name': person.name,
+              'gender': person.gender,
+              'mass': person.mass
+            };
+            
+            return res;
+          });
+
+          $('#output').empty();
+          $('#output').append(CreateElementsForList(result));
+        });
+        
+        /*
+        * Event holding 'planets' button click and showing planets.
+        * @event
+        */
+        $('#planets').on('click', async function(){
+          const result = (await GetFromRequest('https://swapi.dev/api/planets')).map(function(planet){
+            const res = {
+              'name': planet.name,
+              'population': planet.population
+            };
+            
+            return res;
+          });
+          
+          $('#output').empty();
+          $('#output').append(CreateElementsForList(result));
+        });
+      
+      
+        /*
+        * Event holding 'starships' button click and showing starships.
+        * @event
+        */
+        $('#starships').on('click', async function(){
+          const result = (await GetFromRequest('https://swapi.dev/api/starships')).map(function(starship){
+            const res = {
+              'name': starship.name,
+              'model': starship.model,
+              'manufacturer': starship.manufacturer,
+              'cost_in_credits': starship.cost_in_credits
+            };
+            
+            return res;
+          });
+          
+          $('#output').empty();
+          $('#output').append(CreateElementsForList(result));
+        });
+    });
+       
+      
+    /* 
+    * @function
+    * Method to create elements
+    * @param {Dictionary} input - Dictionary to proceed method on.
+    * @returns {Array} Array of 'p' DOM elements.
+    */
+    function CreateElementsForList(input){
+      const result = [];
+      input.forEach(element=>{
+        const p = document.createElement('p');
+        for (const e in element){
+          p.textContent+=element[e];
+        }
+        result.push(p);
+      });
+      return result;
+    }
+    
+    /*
+    * @function
+    * Method to get all result from responses from url.
+    * @param {string} url - Url to send request to.
+    * @returns {Array} Array of resutls from given url.
+    * @async
+    */
+    async function GetFromRequest(url){
+      const promise = await fetch(url);
+      const result = await promise.json();
+      const resultingList = result.results;
+      if (result.next != null){
+        resultingList.push(...await GetFromRequest(result.next))
+      }
+      return resultingList;
+    }
+    </script>
+  </body>
+</html>

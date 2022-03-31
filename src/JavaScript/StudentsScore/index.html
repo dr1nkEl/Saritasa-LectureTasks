@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Task</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="main-form">
+        <div class="form-group">
+          <label for="input">Enter the text here</label>
+          <input type="text" name="input" autofocus="autofocus" class="form-control">
+        </div>
+        <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
+      </form>
+      <hr />
+
+      <div id="output" class="alert alert-primary" role="alert">
+        Output
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      
+     $(function(){
+       /*
+       * Form.
+       * @member
+       */
+       const $form = $('#main-form');
+        
+        /*
+        * Event holding 'submitButton' button click and showing summarized marks of each provided student.
+        * @event
+        */
+        $('#submitButton').on('click', function () {
+          const input = $form.find('[name=input]').val();
+
+          let marks='';
+          const result = StudentsScore(input);
+          for (const item in result){
+            marks+=item+','+result[item]+' ';
+          };
+
+          $('#output').text(marks);
+        });
+     });
+      
+      /*
+      * Marks dictionary.
+      * @member
+      */
+      const marksDictionary = {'A':5, 'B':4, 'C':3, 'D':2, 'E':1};
+
+      /* @function
+      * Sums each student mark.
+      * @param {string} input - Input string with students and their marks separated with comma.
+      * @returns {Dictionary} Dictionary of student-marks sum
+      */
+      function StudentsScore(input){
+          const result = {};
+          const splittedBySpace = input.split(' ').map(x=>x.split(','));
+          splittedBySpace.forEach(studentNote=>{
+              const studentName = studentNote[0];
+              const studentMark = studentNote[1];
+              if (studentName in result){
+                result[studentName] += marksDictionary[studentMark];
+              }
+              else{
+                result[studentName] = marksDictionary[studentMark];
+              }
+          });
+          return result;
+      };
+    </script>
+  </body>
+</html>
